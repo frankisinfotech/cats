@@ -24,7 +24,7 @@ jobs:
      needs:
        loginToAWS
          
-     steps:
+     steps: 
 
      - name: Code Checkout
        uses: actions/checkout@v4
