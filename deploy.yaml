@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cats-app
+  
+spec:
+  selector:
+    matchLabels:
+      app: cats-app
+  replicas: 1
+  template: 
+    metadata:
+      labels:
+        app: cats-app
+    spec:
+      containers:
+      - name: cats-app
+        image: REPOSITORY_TAG
+        resources:
+          requests:
+             memory: 50Mi
+             cpu: 0.25
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cats-app-svc
+
+spec:
+  selector:
+    app: cats-app
+
+  ports:
+    - name: http
+      port: 8000
+      nodePort: 30000
+
+  type: NodePort
