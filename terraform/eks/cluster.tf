@@ -16,7 +16,6 @@ resource "aws_eks_cluster" "eksdemo" {
   ]
 }
 
-
 #-------------------------
 # IAM Role for EKS Cluster
 #-------------------------
