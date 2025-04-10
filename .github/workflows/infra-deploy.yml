@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      AWS_REGION: eu-west-1
+      AWS_REGION: eu-west-2
       TF_WORKING_DIR: terraform/eks
 
     steps:
